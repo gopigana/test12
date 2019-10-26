@@ -3,30 +3,30 @@
    tags: dev
    tasks:
    - name: pull the image from Docker rigistry
-     raw: docker pull gopimahi/test123
+     raw: docker pull gopimahi/test1:2
    - name: pull the image from Docker rigistry
-     raw: docker pull gopimahi/test123
+     raw: docker pull gopimahi/test2:2
    - name: Remove the container if present
      raw: docker rm -f c2 c3
      ignore_errors: true
    - name: spin up container
-     raw: docker run -dti --name c2 -p 98:80 gopimahi/test123 /bin/bash
+     raw: docker run -dti --name c2 -p 98:80 gopimahi/test1:2 /bin/bash
    - name: spin up container
-     raw: docker run -dti --name c3 -p 97:80 gopimahi/test123 /bin/bash
+     raw: docker run -dti --name c3 -p 97:80 gopimahi/test2:2 /bin/bash
 
 
  - hosts: qa
    tags: qa
    tasks:
    - name: pull the image from Docker rigistry
-     raw: docker pull gopimahi/test123
+     raw: docker pull gopimahi/test1:2
    - name: pull the image from Docker rigistry
-     raw: docker pull gopimahi/test123
+     raw: docker pull gopimahi/test2:2
    - name: Remove the container if present
      raw: docker rm -f c2 c3
      ignore_errors: true
    - name: spin up container
-     raw: docker run -dti --name c2 -p 98:80 gopimahi/test123 /bin/bash
+     raw: docker run -dti --name c2 -p 98:80 gopimahi/test1:2 /bin/bash
    - name: spin up container
-     raw: docker run -dti --name c3 -p 97:80 gopimahi/test123 /bin/bash
+     raw: docker run -dti --name c3 -p 97:80 gopimahi/test2:2 /bin/bash
 
